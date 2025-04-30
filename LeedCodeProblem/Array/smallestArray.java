@@ -1,0 +1,28 @@
+package LeedCodeProblem.Array;
+
+import java.util.Scanner;
+
+public class smallestArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size");
+        int size = sc.nextInt();
+        System.out.println("Enter the values");
+        int[] arr = new int[size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int ans=findArray(arr);
+        System.out.println("smallest number is:"+ans);
+    }
+    static int findArray(int[] arr){
+        int l=arr[0];
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]<l){
+                l=arr[i];
+            }
+        }
+        return l;
+    }
+}
+
